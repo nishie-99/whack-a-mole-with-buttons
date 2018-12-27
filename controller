@@ -1,0 +1,14 @@
+let list: number[] = []
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 100) {
+        game.addScore(1)
+        radio.sendNumber(list[Math.randomRange(0, 2)])
+    }
+})
+input.onButtonPressed(Button.A, function () {
+    radio.sendNumber(150)
+    game.startCountdown(10000)
+    radio.sendNumber(list[Math.randomRange(0, 2)])
+})
+radio.setGroup(1)
+list = [1, 2, 3]
